@@ -5,7 +5,6 @@ import PropTypes from 'prop-types';
 
 
 function TicketList(props){
-  console.log(props.ticketList);
   return (
     <div>
       <hr/>
@@ -23,7 +22,7 @@ function TicketList(props){
 }
 
 TicketList.propTypes = {
-  ticketList: PropTypes.array,
+  ticketList: PropTypes.object,
   currentRouterPath: PropTypes.string,
   onTicketSelection: PropTypes.func
 }
