@@ -8,5 +8,3 @@ describe("rootReducer", () => {
       selectedTicket: {}
     });
   });
-
-});

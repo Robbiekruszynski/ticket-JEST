@@ -15,7 +15,8 @@ function TicketList(props){
           issue={props.ticketList[ticket].issue}
           formattedWaitTime={props.ticketList[ticket].formattedWaitTime}
           currentRouterPath={props.currentRouterPath}
-          key={props.ticketList[ticket].id}
+          ticketId={props.ticketList[ticket].ticketId}
+          key={index}
           onTicketSelection={props.onTicketSelection}/>
       )}
     </div>

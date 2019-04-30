@@ -13,7 +13,7 @@ function NewTicketForm(props){
     event.preventDefault();
     const action = {
       type: 'ADD_TICKET',
-      id: v4(),
+      ticketId: v4(),
       names: _names.value,
       location: _location.value,
       issue: _issue.value,
