@@ -31,11 +31,11 @@ class App extends React.Component {
   }
 
   updateTicketElapsedWaitTime() {
-    // var newMasterTicketList = Object.assign({}, this.state.masterTicketList);
-    // Object.keys(newMasterTicketList).forEach(ticketId => {
-    //   newMasterTicketList[ticketId].formattedWaitTime = (newMasterTicketList[ticketId].timeOpen).fromNow(true);
-    // });
-    // this.setState({masterTicketList: newMasterTicketList});
+    var newMasterTicketList = Object.assign({}, this.state.masterTicketList);
+    Object.keys(newMasterTicketList).forEach(ticketId => {
+      newMasterTicketList[ticketId].formattedWaitTime = (newMasterTicketList[ticketId].timeOpen).fromNow(true);
+    });
+    this.setState({masterTicketList: newMasterTicketList});
   }
 
   handleChangingSelectedTicket(ticketId){
@@ -49,7 +49,8 @@ class App extends React.Component {
         <Switch>
           <Route exact path='/' render={()=><TicketList ticketList={this.props.masterTicketList} />} />
           <Route path='/newticket' render={()=><NewTicketControl />} />
-          <Route path='/admin' render={(props)=><Admin ticketList={this.props.masterTicketList} currentRouterPath={props.location.pathname}
+          <Route path='/admin' render={(props)=><Admin ticketList={this.props.masterTicketList}
+            currentRouterPath={props.location.pathname}
             onTicketSelection={this.handleChangingSelectedTicket}
             selectedTicket={this.state.selectedTicket}/>} />
           <Route component={Error404} />
@@ -67,6 +68,7 @@ const mapStateToProps = state => {
   return {
     masterTicketList: state
   };
+  console.log(masterTicketList);
 };
 
 export default withRouter(connect(mapStateToProps)(App));

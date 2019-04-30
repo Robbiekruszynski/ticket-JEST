@@ -9,11 +9,12 @@ function Ticket(props){
       <p><em>{props.issue}</em></p>
       <hr/>
     </div>;
+    console.log(props);
   if (props.currentRouterPath === '/admin'){
     return (
-      <div onClick={() => {props.onTicketSelection({names: props.names, location: props.location, issue: props.issue, formattedWaitTime: props.formattedWaitTime});}}>
-        {ticketInformation}
-      </div>
+      <div onClick={() => {props.onTicketSelection(props.ticketId);}}>
+         {ticketInformation}
+       </div>
     );
   } else {
     return (
@@ -28,7 +29,7 @@ Ticket.propTypes = {
   names: PropTypes.string.isRequired,
   location: PropTypes.string.isRequired,
   issue: PropTypes.string,
-  formattedWaitTime: PropTypes.string.isRequired,
+  formattedWaitTime: PropTypes.string,
   currentRouterPath: PropTypes.string,
   onTicketSelection: PropTypes.func
 };

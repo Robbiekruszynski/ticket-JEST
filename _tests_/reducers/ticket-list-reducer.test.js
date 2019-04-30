@@ -1,4 +1,6 @@
-import ticketListReducer from './../src/reducers/ticket-list-reducer';
+import ticketListReducer from './../../src/reducers/ticket-list-reducer';
+import selectedTicketReducer from './../../src/reducers/selected-ticket-reducer';
+
 
 describe('ticketListReducer', () => {
 
